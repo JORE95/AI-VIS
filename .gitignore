@@ -1,0 +1,50 @@
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment variables
+.env
+.env.*
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# HAM10000 dataset
+data/
+datasets/
+HAM10000_images_part_1/
+HAM10000_images_part_2/
+*.zip
+
+# Trained models and checkpoints
+models/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# Experiment outputs
+outputs/
+runs/
+logs/
+wandb/
+mlruns/
+data/
+models/
+# IDE and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+hagrid-sample-30k-384p/
+best_model/
