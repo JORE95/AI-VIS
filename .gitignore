@@ -41,6 +41,7 @@ wandb/
 mlruns/
 data/
 models/
+
 # IDE and OS
 .vscode/
 .idea/
@@ -48,3 +49,9 @@ models/
 Thumbs.db
 hagrid-sample-30k-384p/
 best_model/
+
+# files
+processed_data_final.csv
+processed_data.csv
+load_data.py
+dataprep.ipynb
