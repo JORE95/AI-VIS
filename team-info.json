@@ -1,0 +1,34 @@
+{
+    "team_name": "AI/VISards",
+    "students": [
+        {
+            "student_id": "k00000000",
+            "first_name": "Johannes",
+            "last_name": "Last",
+            "email": "first.last@mail.com",
+            "github_user": "mygitusername"
+        },
+        {
+            "student_id": "k51853858",
+            "first_name": "Amin",
+            "last_name": "Last",
+            "email": "aminsn.pv@gmail.com",
+            "github_user": "mygitusername"
+        },
+        {
+            "student_id": "k12542246",
+            "first_name": "Jakub",
+            "last_name": "Drziak",
+            "email": "jakub.drziak@gmail.com",
+            "github_user": "J0kubas"
+        },
+        {
+            "student_id": "k12554967",
+            "first_name": "Albin",
+            "last_name": "George Jose",
+            "email": "first.last@mail.com",
+            "github_user": "mygitusername"
+        }
+        
+    ]
+}
