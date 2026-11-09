@@ -1,0 +1,59 @@
+{ "prompt1":
+    {"prompt":"Don't implement yet, just review and discuss phase 1 approach and visualisation of failed classifications(confusion matrix,...) and other possibilities that fit the task: The main track of this assignment focuses on Vis4AI, where you will use visualization to investigate an AI model through two phases that ask two complementary questions:
+    Phase I: How does the model behave?
+    Phase II: What did the model learn?
+    Phase I: How does the model behave? In this phase, you will treat the model as a black box; you don’t look inside it. You only look at inputs and outputs and build up a picture of its behavior from that alone. To this end, you need a dataset of inputs from which you can obtain model outputs. This dataset can be:an official test set released with the model
+    an established benchmark for the same taska synthetic dataset designed by you to investigate particular edge cases or hypotheses
+    The dataset needs to be large enough that any pattern you report can be shown to be systematic behavior, not a handful of cherry-picked examples.
+    What counts as “behavior” can include specific error patterns, biases, hallucinations, or shifts in output characteristics like diversity, confidence, style, etc. 
+    If you have access to the training data, you can also explore it as a source of hypotheses. For example, exploring the training data might show that a class is underrepresented; you would then go back to the model outputs to confirm or disconfirm that this shows up as biased behavior.
+    Note that we are not aiming for a model performance report; a table of benchmark scores is not sufficient. Your visualization should expose behaviors that cannot be understood from aggregate performance measures alone. Additionally, simply identifying a pattern is not sufficient; you are supposed to understand it in depth. For example, if you have a 2D projection of inputs, discovering a cluster for which the model makes many incorrect predictions is not enough. You are expected to ask further questions like: What distinguishes this cluster from other clusters? Why is the cluster particularly dense or sparse? Does it have sub-clusters where the model behaves differently? etc.
+    Phase II: What did the model learn?
+    In this phase, you will investigate how the model produces particular predictions or outputs, ideally continuing directly from where Phase 1 left off. For example, try to dig into the behaviors you found in Phase I. This means opening the black box (weights, representations, attention, gradients).You might compare how different input groups are organized in the learned representation space, or investigate how these representations change from one layer to another. If you train or fine-tune the model yourself, you may also examine when a particular behavior emerges during training or visualize how input representations change across checkpoints. You may use explanation techniques such as saliency maps, attention maps, LIME, SHAP, and K-nearest neighbors, or other techniques. Each pair should use at least two techniques and compare or combine the insights they provide.
+    The goal is not simply to visualize how the model represents an arbitrary set of examples, but to understand which regions of the representational space are associated with different behaviors or input groups. For example, instead of displaying several saliency maps and describing them individually, you might hypothesize that the model relies more heavily on background information for an error group discovered in Phase I. You would then compare saliency maps across correct and incorrect examples to understand whether this difference is consistent.
+    our specific task selection: model(https://huggingface.co/facebook/deit-tiny-patch16-224), dataset(https://huggingface.co/datasets/cj-mills/hagrid-sample-30k-384p), classification",
+    "answer summary":"listed information about the model, dataset, and possible visualizations.",
+    "relevance/results":"The point of this prompt was to get Claude informed and provide context to the whole project and not just sections at a time"
+    },
+"prompt2":
+    {"prompt": "new setup: create new notebook for finetuning of the model. i have the entire hand gesture dataset downloaded on my machine. every class has its own folder train_val_(CLASS NAME). in the csv column "id" are the full names of the image files i am using and we are only using 5 classes which are in the "label" column. do a 75/5/20 train val test split stratified, make sure to record and export all image ids that are used as test and make sure to export the trained model weights so i can reuse without another train procedure. optimize so the run time isnt 5 hours again and training on cpu with limited RAM",
+    "answer summary":"Listed choices made in implementation and provided notebook",
+    "relevance/results":"shifted to a full fine tune after linear probe training took too long and produced a subpar model which would be pointless to investigated"
+    },
+"prompt3":
+    {"prompt":"original image test set results with metadata and confidence per class. what interesting visualizations of behavior of the model can we make from this. we can try image altering later",
+    "answer summary":"Explained some quite simple visualizations and implemented",
+    "relevance/results":"Wanted to see whether Claude can come up with something that doesnt directly flow from the metadata, but got simple ideas instead. still good for general investigations"
+    },
+"prompt4":
+    {"prompt":"no very revealing patterns that i could recognize. i manually checked all 'like' images that were misclassified as 'call' and to me they seemed they all had white background or a light source present that made it bright. how could i visualize that",
+    "answer summary":"Claude created functions to measure brightness using the top and bottom strips of images as background proxies",
+    "relevance/results":"Just by manually checking the images it seemed to me there is a ligth source present in all of them but i needed some concrete evidence rather than just a feeling. there was some truth to it but not significant enough to be relevant"
+    },
+"prompt5":
+    {"prompt":"lets transform the test set, load model and rerun test and get new csv of probabilities and all the other columns. 3 transformation each ran on its own. 1st flip the image upside down, 2nd black and white image, 3rd raise brightness. dont combine them, they are all separate tests. create notebook",
+    "answer summary":"implemented transformations",
+    "relevance/results":"wanted to stay with the topic of image alterations and its effects"
+    },
+"prompt6":
+    {"prompt":"from these accuracies as context, what interesting visualizations can we make, because now we have quite some difference in behavior: {'original': 0.871, 'flipped_upside_down': 0.257, 'black_and_white': 0.734, 'brightness_raised': 0.714}",
+    "answer summary":"expressed his opinion on the transformations based on the provided accuracies and created 5 comparative visualizations",
+    "relevance/results":"wanted to evaluate results side by side to see the differences"
+    },
+"prompt7":
+    {"prompt":"is there any way to classify what color dominates the background and maybe investigate if that has any effect? or maybe do another transform where colors get inverted?",
+    "answer summary":"implemented functions to get color of the background and color inverting transformation",
+    "relevance/results":"still wanted more color differences, but wasnt satisfied with the background color classifications because it doesnt take into account that there can be other colors that arent necessarily in the corners"
+    },
+"prompt8":
+    {"prompt":"check results. i saw that most misclassifications are predicted as like (*attached a csv)",
+    "answer summary":"went through results and pointed out some other stats that he found interesting",
+    "relevance/results":"wanted him to scan through and point out what he finds out of the orfinary compared to other"
+    },
+"prompt9":
+    {"prompt":"implement more ideas where we could see something interesting or unexpected",
+    "answer summary":"implemented ideas we havent tried yet",
+    "relevance/results":"lot of the visualizations up to this point were similar in nature so wanted something we havent done yet. the results was that Claude started getting quite close to interpreting learning phase 2 rather than behavior phase 1 so i took that as i sign that maybe he has exhausted his ideas"
+    },
+"other prompts" : "there were of course a lot of other prompts with debugging the finetuning and trying to understand some of the suggestions Claude made but they aren't so interesting to investigate"
+}
