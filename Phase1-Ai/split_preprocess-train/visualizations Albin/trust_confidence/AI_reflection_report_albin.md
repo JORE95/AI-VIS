@@ -5,7 +5,7 @@
 **Group:** AI/VISards
 **Phase:** Midpoint (Phase I) — “How does the model behave?”
 **AI-aided pair (Phase I):** Albin + Jakub
-**AI tool used:** opencode CLI (DeepSeek model)
+**AI tool used:** DeepSeek API
 
 ## My part
 
@@ -46,5 +46,3 @@ AI was most useful as a fast drafting and checking partner, not as an authority.
 It produced a first analysis quickly and pointed to an interesting question, but its
 outputs needed constant verification against the actual data and repository. The main
 lesson: AI shifts effort from writing to verifying.
-
-*Phase I version; to be extended after Phase II.*
