@@ -19,7 +19,7 @@ env/
 .ipynb_checkpoints/
 
 # HAM10000 dataset
-data/
+
 datasets/
 HAM10000_images_part_1/
 HAM10000_images_part_2/
@@ -39,7 +39,6 @@ runs/
 logs/
 wandb/
 mlruns/
-data/
 models/
 
 # IDE and OS
