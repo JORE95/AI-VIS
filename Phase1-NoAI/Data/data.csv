@@ -1,4 +1,4 @@
-id,leading_hand,label,leading_conf,age,gender,race
+id,leading_hand,label,lading_conf,age,gender,race
 00005c9c-3548-4a8f-9d0b-2dd4aff37fc9,right,call,1.0,15.73,female,White
 0020a3db-82d8-47aa-8642-2715d4744db5,left,call,1.0,38.03,male,White
 004ac93f-0f7c-49a4-aadc-737e0ad4273c,right,call,1.0,47.02,female,White
